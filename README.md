@@ -14,7 +14,7 @@ Currently to return a specific HTTP status-code from your Spring MVC doe you hav
 
 Lets jump right in with some simple use cases.
 
-### some object is not found and need to return 404
+#### some object is not found and need to return 404
 ```java
 //method 1
 if (account == null) throw new HttpErrorException(HttpStatus.NOT_FOUND, "The account requested for is not found.");
@@ -23,7 +23,7 @@ if (account == null) throw new HttpErrorException(HttpStatus.NOT_FOUND, "The acc
 HttpErrorException.throwIfNull(account, HttpStatus.NOT_FOUND, "The account requested for is not found.");
 ```
 
-### an exception is caught and need to return appropriate status-code
+#### an exception is caught and need to return appropriate status-code
 ```java
 try {
     //some complicated code that may throw various excpetions
@@ -36,7 +36,7 @@ try {
 }
 ```
 
-### some object being POST'd is already found and need to return 409
+#### some object being POST'd is already found and need to return 409
 ```java
 //method 1
 if (account != null) throw new HttpErrorException(HttpStatus.CONFLICT, "The account requested for is not found.");
@@ -45,7 +45,7 @@ if (account != null) throw new HttpErrorException(HttpStatus.CONFLICT, "The acco
 HttpErrorException.throwConflictIfNotNull(account, "The account already exists.");
 ```
 
-### return 400 if String is blank
+#### return 400 if String is blank
 ```java
 String username = ...
 
@@ -63,5 +63,12 @@ Other static helper methods that exist are:
 1. throwIfTrue(boolean condition, HttpStatus httpStatus, String msg)
 2. throwIfFalse(boolean condition, HttpStatus httpStatus, String msg)
 
+The output error text will be a formatted JSON string.  Here is an example:
 
-
+```
+{  
+  "status": 400,  
+  "message": "Unsupported currency.",  
+  "cause": "some error occurred"  
+}  
+```
