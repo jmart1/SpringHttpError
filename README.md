@@ -75,5 +75,5 @@ Here is an example:
 
 #### implementation
 This project consists of just two classes.
-1)  *HttpErrorException*:  The actual exception class that is thrown.
-2)  *HttpErrorExceptionHandler*:  The implementation of Spring's *ResponseEntityExceptionHandler* that will catch any *HttpErrorException* exceptions, convert it into formatted JSON error, and will set the HTTP status-code that is returned.
+1)  **HttpErrorException**:  The actual exception class that is thrown.
+2)  **HttpErrorExceptionHandler**:  The implementation of Spring's *ResponseEntityExceptionHandler* that will catch any **HttpErrorException** exceptions, convert it into formatted JSON error, and will set the HTTP status-code that is returned.
