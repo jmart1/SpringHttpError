@@ -30,7 +30,7 @@ try {
 } catch (NumberFormatException nfe){
     throw new HttpErrorException(HttpStatus.BAD_REQUEST, "The input provided is not in proper format.", nfe);
 } catch (ResourceNotFoundException rnfe) {
-    throw new HttpErrorException(HttpStatus.NOT_FOUND, "The the user requested for is not found.", nfe);
+    throw new HttpErrorException(HttpStatus.NOT_FOUND, "The user requested for is not found.", nfe);
 } catch (NotAuthorizedException e) {
     throw new HttpErrorException(HttpStatus.FORBIDDEN, "Operation requested is not allowed.", nfe);
 }
