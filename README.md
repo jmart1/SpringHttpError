@@ -60,8 +60,8 @@ HttpErrorException.throwBadRequestIfBlank(username, "Username field missing from
 ```
 
 #### other static helper methods that exist are:
-1. throwIfTrue(boolean condition, HttpStatus httpStatus, String msg)
-2. throwIfFalse(boolean condition, HttpStatus httpStatus, String msg)
+1. `HttpErrorException.throwIfTrue(boolean condition, HttpStatus httpStatus, String msg)`
+2. `HttpErrorException.throwIfFalse(boolean condition, HttpStatus httpStatus, String msg)`
 
 #### the output error text will be a formatted JSON string.  
 Here is an example:
