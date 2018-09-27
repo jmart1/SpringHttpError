@@ -5,7 +5,7 @@ Currently to return a specific HTTP status-code from your Spring MVC code you ha
 
 1)  Throw an existing exception and map that exception to specific HTTP status via a custom ResponseEntityExceptionHandler.  This fails as a proper solution because you might not want to lock down a specific exception class to a stauts code.  The decision of what exception is thrown deep in your dependencies is up to someone else to decide, as such you do not want to assume those exceptions should be converted into the same HTTP status-code accross your application.
 
-2)  Return ResponseEntity<SomePojo> from your controller then have all your business (aka service classes) return ResponseEntity<SomePojo> from their methods.  This is just clunky.  And if you want to return an error message you can't unless you are returning ResponsEntity<String>.
+2)  Return `ResponseEntity<SomePojo>` from your controller then have all your business (aka service classes) return `ResponseEntity<SomePojo>` from their methods.  This is just clunky.  And if you want to return an error message you can't unless you are returning `ResponsEntity<String>`.
 
 3)  In your controller classs accept the HttpServletResponse  as input then set the status-code directly on the HttpServletResponse.  This is not desirable due to either having force your controller methods to decide what the HTTP status-code should be or pass the HttpServletResponse to your service classes.
 
