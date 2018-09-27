@@ -1,7 +1,7 @@
 # SpringHttpError
 A simple way to return any HTTP status-code from your Spring MVC code.  
 
-Currently to return a specific HTTP status-code from your Spring MVC doe you have to do one of the following.
+Currently to return a specific HTTP status-code from your Spring MVC code you have to do one of the following.
 
 1)  Throw an existing exception and map that exception to specific HTTP status via a custom ResponseEntityExceptionHandler.  This fails as a proper solution because you might not want to lock down a specific exception class to a stauts code.  The decision of what exception is thrown deep in your dependencies is up to someone else to decide, as such you do not want to assume those exceptions should be converted into the same HTTP status-code accross your application.
 
